@@ -2,7 +2,7 @@ module.exports = function(grunt) {
   "use strict";
 
   require("load-grunt-tasks")(grunt);
-
+  
   grunt.initConfig({
 
 
@@ -314,12 +314,13 @@ module.exports = function(grunt) {
       "watch"
     ]);
   });
-
+  grunt.loadNpmTasks('grunt-auto-install');  
   // Meteor tasks
   grunt.registerTask("meteor-test", ["exec:meteor-init", "exec:meteor-test", "exec:meteor-cleanup"]);
   grunt.registerTask("meteor-publish", ["exec:meteor-init", "exec:meteor-publish", "exec:meteor-cleanup"]);
   grunt.registerTask("meteor", ["exec:meteor-init", "exec:meteor-test", "exec:meteor-publish", "exec:meteor-cleanup"]);
 
   grunt.registerTask("cibuild", ["newer:jshint", "meteor-test"]);
+
 
 };
