@@ -1,0 +1,30 @@
+.pagination {
+    background: transparent;
+    > li {
+        > a {
+            background-color: transparent;
+            color: @btn-primary;
+            border: 0;
+            margin: 0;
+            border-radius: 50%;
+            &:hover, &:focus {
+                background-color: transparent;
+                color: darken(@btn-primary, 6%);
+            }
+        }
+      &.active a {
+            background-color: @primary;
+            color: lighten(@btn-primary, 6%);
+            border: 0;
+            &:hover, &:focus {
+                background-color: lighten(@primary, 6%);
+                color: lighten(@btn-primary, 6%);
+            }
+      }
+     
+        &.disabled > a, &.disabled > a:hover {
+            color: @text-disabled;
+        }
+    }
+
+}
